@@ -36,8 +36,14 @@ public class Question1 {  // begin class
         // new line character for file writing
         
         int actualLength = 0;       // actual length of array
+	    
+// what's list for?
         int[] list = new int[100];
+
+// len should/could be defined as a constnt with a value of 1000 since it's len that represents the length of the arry
         int len = 0;
+	    
+// instead of new int[1000]    new int[len]
         int[] randomNumbers = new int[1000];
         
     	
@@ -47,12 +53,18 @@ public class Question1 {  // begin class
         //DecimalFormat df1 = new DecimalFormat("##.###");
     
         // todo: add a try catch to the creation of the buffered reader
+	    
+// for q1 you don't need a buffered reader since you're creating a list of random numbers
         BufferedReader fin = new BufferedReader(new FileReader("FrequencyNumber.txt"));
+	    
+// cold change the name of the output file to something like "frequencyData.txt"
         PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("outFile.txt")));
     	
     // ********** Print output Banner **********
 
         printBanner();      // call printBanner method
+	    
+// don't print anythig but the random numbers to the output file
         fileBanner(fout);       // call fileBanner method
         bannerForWindow = windowBanner();
 	    	
@@ -67,8 +79,10 @@ public class Question1 {  // begin class
 
     // ************************ print output ****************************
     
-        
+// this call creates your list of 1000 random numbers        
         loadRandomList(len, list, randomNumbers);
+	    
+// now print the 1000 random numbers to the ouptut file, you'll need to create a new method to do this (or use an existing method if you already have one)	    
        
     // ******** closing message *********
         
